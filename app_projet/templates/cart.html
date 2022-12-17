@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>cart</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+    <h1>Panier</h1>
+   {% for order in orders %}
+
+        <h2>{{ order.article.article_name }}</h2>
+        <h2>{{ order.article.image }}</h2>
+        <h2>{{ order.article.stock }}</h2>
+        <h2>{{ order.article.price }}</h2>
+        <h2>{{ order.quantity }}</h2>
+        
+
+    {% endfor %}
+
+</body>  
+</html>  
