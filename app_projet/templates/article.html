@@ -1,6 +1,32 @@
 <!DOCTYPE html>  
-<html lang="en">  
-<head>  
+<html lang="en"> 
+  <div class="article">
+
+    <h3>Ajouter Nouveau Article</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class='form'>
+            <label for="">Url de l'image</label>
+            <input type="text" name="image" class="form-control">
+        </div>    
+        <div class='form'>
+            <label for="">Nom</label>
+            <input type="text" name="article_name" class="form-control">
+        </div>
+        <div class='form'>
+            <label for="">stock</label>
+            <input type="int" name="stock" class="form-control">
+        </div>
+        <div class='form'>
+            <label for="">prix</label>
+            <input type="int" name="price" class="form-control">
+        </div>
+        <div class='form'>
+            <button type="submit">Ajouter</button>
+            <a href="{% url 'app_projet:index' %}">Retourner aux articles</a>
+        </div>
+    </form> 
+<!-- <head>  
     <meta charset="UTF-8">  
     <title>Index</title>  
     {% load static %}  
@@ -49,5 +75,5 @@
   </div>  
     </div>  
 </form>  
-</body>  
+</body>   -->
 </html>  

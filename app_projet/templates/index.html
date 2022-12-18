@@ -16,15 +16,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Créer un article</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Votre panier</a>
-                        </li>
+                       
                     </ul>
                     
                 </div>
@@ -47,15 +39,15 @@
                         <div class="card-body">
                             <h5 class="card-title">
                                 {{ article.article_name }} <br/>
-                                <small>{{article.stock}}</small>
+                                <small>Stock : {{article.stock}}</small>
                             </h5>
                             <h3 class="text-danger">{{article.price}} €</h3>
 
                         </div>
                         <div class="card-footer">
                             <a href="/app_projet/show" class="btn btn-primary">Voir plus</a>
-                            <a href="/app_projet/edit/{{ article.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
-                            <a href="/app_projet/destroy/{{ article.id }}">Delete</a>  
+                            <a href="/app_projet/edit/{{ article.id }}" class="btn btn-primary">Edit</a>
+                            <a href="/app_projet/destroy/{{ article.id }}"  class="btn btn-primary" >Delete</a>  
                             <a style="float: right;" href="{% url 'app_projet:addtocart' %}" class="btn btn-success">
                                 <i class="fas fa-cart-plus"></i> Ajouter
                             </a>

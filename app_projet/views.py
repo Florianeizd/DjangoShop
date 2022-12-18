@@ -10,18 +10,25 @@ def index(request):
     context = {'list_articles': list_articles}
     return render(request, 'index.html' , context)
 
-def article(request):  
-    if request.method == "POST":  
-        form = ArticleForm(request.POST)  
-        if form.is_valid():  
-            try:  
-                form.save()  
-                return redirect('/app_projet')  
-            except:  
-                pass  
-    else:  
-        form = ArticleForm()  
-    return render(request,'article.html',{'form':form})  
+# def article(request):  
+#     if request.method == "POST":  
+#         form = ArticleForm(request.POST)  
+#         if form.is_valid():  
+#             try:  
+#                 form.save()  
+#                 return redirect('/app_projet')  
+#             except:  
+#                 pass  
+#     else:  
+#         form = ArticleForm()  
+#     return render(request,'article.html',{'form':form})  
+
+def article(request):
+    form = ArticleForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('/app_projet')
+    return render(request, "article.html", {'form': form})
 
 
 def show(request):  
